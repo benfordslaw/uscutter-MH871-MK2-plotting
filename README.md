@@ -4,7 +4,7 @@
 
 The USCutter’s axes are not very intuitive. The y-direction runs parallel the machine, so you must generate an SVG with a height less than the width of the machine: 34 inches. The plotter is fed in the x-direction via a spool, so your SVG can have any width. 
 
-Download MH871-MK2.toml into your project’s directory. This is a user-provided configuration file required to build the right kind of hpgl file.
+Download [MH871-MK2.toml](https://github.com/benfordslaw/uscutter-MH871-MK2-plotting/blob/848abf4132b205ff69012ca5817c8e2a2e542445/MH871-MK2.toml) into your project’s directory. This is a user-provided configuration file required to build the right kind of hpgl file.
 
 In a VPYPE environment, run
 
@@ -35,4 +35,3 @@ Connect your laptop via USB to the serial port on the USCutter before opening Co
 In the CoolTerm menu, go to Connection > Options. For Port, select the usb port connected to the USCutter. For BaudRate, choose 2400. For Flow Control, select XON only. Unselect “Software Supported Flow Control.”
 
 Press Connection > Connect, then Connection > Send Text/Binary File. Select your HPGL file and press OK. If there are any issues while plotting, press ‘Reset’ on the USCutter, then press ‘Cancel’ on your device. If the pen is stuck in the down position, press ‘Reset’ again on the USCutter.
-![image](https://user-images.githubusercontent.com/74384808/138029770-2661b8b9-4ec9-49c2-b143-9cc2fc93d874.png)
