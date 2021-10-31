@@ -34,9 +34,7 @@ Your device may not allow you to open the application. If this happens, go to `S
 
 Connect your laptop via USB to the serial port on the USCutter before opening CoolTerm.
 
-In the CoolTerm menu, go to `Connection > Options`. For `Port`, select the usb port connected to the USCutter. For `BaudRate`, choose `2400`. For `Flow Control`, select `XON only`. Unselect `Software Supported Flow Control`.
-
-<img width="450" alt="coolterm-correct-opts" src="https://user-images.githubusercontent.com/74384808/138030927-2a5f423b-8401-492a-a059-d9ee94e1f7cf.png">
+In the CoolTerm menu, go to `Connection > Options`. For `Port`, select the usb port connected to the USCutter. For `BaudRate`, choose `2400`. For `Flow Control`, select `XON only`. Be sure to `Software Supported Flow Control`.
 
 Press `Connection > Connect`, then `Connection > Send Text/Binary File`. Select your HPGL file and press OK. If there are any issues while plotting, press `Reset` on the USCutter, then press `Cancel` on your device. If you do not press `Cancel`, your device is still transmitting instructions to the plotter. If the pen is stuck in the down position, press `Reset` again on the USCutter.
 
