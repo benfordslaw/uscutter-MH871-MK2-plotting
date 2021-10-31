@@ -2,7 +2,7 @@
 
 ### Convert SVG into HPGL using VPYPE
 
-The USCutter’s axes are not very intuitive. It's sometimes helpful to stand on the right side of the machine and read the axes taped to the top. The y-direction runs parallel the machine, so you must generate an SVG with a height less than the width of the machine: 34 inches. 30 inches is generally the most you want to go. The plotter is fed in the x-direction, sometimes via a spool, so your SVG can have any width. 
+The USCutter’s axes are not very intuitive. It's sometimes helpful to stand on the right side of the machine and read the axes taped to the top. The y-direction runs parallel the machine, so you must generate an SVG with a height less than the width of the machine: 34 inches. 30 inches is generally the most you want to go. The plotter is fed in the x-direction, sometimes via a spool, so your SVG can have any width as long as it is smaller than your paper's width. If it is not, your paper will fall out of the plotter. Another size limitation on the fed paper is in the y-direction. If your paper cannot be securely held by the rollers, it will not properly move. One way to plot on smaller paper is to attach it on top of a larger sheet of paper which is able to be held by the rollers (thank you Hima for this suggestion).
 
 Download [MH871-MK2.toml](https://github.com/benfordslaw/uscutter-MH871-MK2-plotting/blob/848abf4132b205ff69012ca5817c8e2a2e542445/MH871-MK2.toml) into your project’s directory. This is a user-provided configuration file required to build the right kind of HPGL file. For more information or to modify this file, [this link](https://vpype.readthedocs.io/en/latest/cookbook.html#faq-custom-hpgl-config) provides helpful reference.
 
@@ -26,7 +26,7 @@ Loosen the screw on the pen-holder and push the pen-holder down. Load your drawi
 
 Unlike the AxiDraw, the USCutter’s origin is in the bottom left corner. Accordingly, slide the plotter head all the way to the right of the machine. This is going to the ‘bottom’ of the page according to its axes. When the plotter head is where you want the bottom boundary of your drawing to be, press `Origin.` This will push the pen down briefly, leaving a little dot. Put a piece of tape or scrap paper under the pen when setting the origin to protect your plot if you need to. You can also pull the paper further out after setting the origin.
 
-### Transmitting to the USCutter
+### Transmitting to the USCutter with a personal device
 
 Download [CoolTerm (mac)](https://www.freeware.the-meiers.org/)
 
@@ -34,8 +34,22 @@ Your device may not allow you to open the application. If this happens, go to `S
 
 Connect your laptop via USB to the serial port on the USCutter before opening CoolTerm.
 
-In the CoolTerm menu, go to `Connection > Options`. For `Port`, select the usb port connected to the USCutter. For `BaudRate`, choose `2400`. For `Flow Control`, select `XON only`. Be sure to `Software Supported Flow Control`.
+In the CoolTerm menu, go to `Connection > Options`. For `Port`, select the usb port connected to the USCutter. For `BaudRate`, choose `9600`. For `Flow Control`, select `XON only`. Be sure to select `Software Supported Flow Control`.
 
-Press `Connection > Connect`, then `Connection > Send Text/Binary File`. Select your HPGL file and press OK. If there are any issues while plotting, press `Reset` on the USCutter, then press `Cancel` on your device. If you do not press `Cancel`, your device is still transmitting instructions to the plotter. If the pen is stuck in the down position, press `Reset` again on the USCutter.
+Press `Connection > Connect`, then `Connection > Send Text/Binary File`. Select your HPGL file and press OK. 
 
-If you would like to change the `Cut Speed` or `Cut Pressure`, both possible by pressing `Setup` and using the arrows as marked, do not do so while the plot is in progress. It will freeze and draw random lines. Make sure to `Test` with any new settings before plotting.
+Do not let your laptop sleep, the plotter will stop and sometimes draw random lines. If there are any issues while plotting, press `Reset` on the USCutter, then press `Cancel` on your device. If you do not press `Cancel`, your device is still transmitting instructions to the plotter. If the pen is stuck in the down position, press `Reset` again on the USCutter.
+
+If you would like to change the `Cut Speed` or `Cut Pressure`, both possible by pressing `Setup` and using the arrows as marked, do not do so while the plot is in progress. It will freeze and draw random lines. Make sure to `Test` with any new settings or any new pen before plotting.
+
+### Transmitting to the USCutter with the "Studio Pinky Toe"
+
+Unplug the USB drive from the USB Hub on the computer next to the plotter. Plug it into your device and copy your HPGL files. Plug it back into the USB hub.
+
+Verify that the serial cable is glowing blue. If it is not, verify that all cables are fully plugged in.
+
+Open CoolTerm from the Desktop. The default settings should be as shown in the above section, with `COM3` as the `Port`, but it doesn't hurt to double-check. 
+
+Press `Connection > Connect`, then `Connection > Send Text/Binary File`. Navigate to the USB drive, select `All Files (*.*)`, select your HPGL file, and press OK. If there are any issues while plotting, press `Reset` on the USCutter, then press `Cancel` on your device. If you do not press `Cancel`, your device is still transmitting instructions to the plotter. If the pen is stuck in the down position, press `Reset` again on the USCutter.
+
+If you would like to change the `Cut Speed` or `Cut Pressure`, both possible by pressing `Setup` and using the arrows as marked, do not do so while the plot is in progress. It will freeze and draw random lines. Make sure to `Test` with any new settings or any new pen before plotting.
