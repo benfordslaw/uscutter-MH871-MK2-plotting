@@ -44,6 +44,8 @@ If you would like to change the `Cut Speed` or `Cut Pressure`, both possible by 
 
 ### Transmitting to the USCutter with the "Studio Pinky Toe"
 
+(thank you Perry for setting up this computer)
+
 Unplug the USB drive from the USB Hub on the computer next to the plotter. Plug it into your device and copy your HPGL files. Plug it back into the USB hub.
 
 Verify that the serial cable is glowing blue. If it is not, verify that all cables are fully plugged in.
